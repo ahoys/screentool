@@ -4,7 +4,8 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <p>#header</p>
+                <h1>Screen Tool</h1>
+                <h2>Display Specifications</h2>
             </div>
         );
     }

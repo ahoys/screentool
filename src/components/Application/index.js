@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './Application.css';
 
 // React Components.
-import Header from './Header';
-import Specification from './Specification';
-import Comparison from './Comparison';
-import Footer from './Footer';
+import Header from '../Header';
+import Specification from '../Specification';
+import Comparison from '../Comparison';
+import Footer from '../Footer';
 
 class Application extends Component {
     render() {
