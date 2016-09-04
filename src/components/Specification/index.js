@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+import SpecificationScreen from './SpecificationScreen';
+
 class Specification extends Component {
     render() {
         return (
             <div className="specification">
-                <p>#specification</p>
+                <SpecificationScreen id={0} />
+                <SpecificationScreen id={1} />
             </div>
         );
     }
