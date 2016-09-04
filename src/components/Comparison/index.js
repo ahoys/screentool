@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Comparison.css';
 
 class Comparison extends Component {
     render() {

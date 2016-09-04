@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import './Specification.css';
 
+// React components.
 import SpecificationScreen from './SpecificationScreen';
 import Resolution from './Resolution';
 import ScreenSize from './ScreenSize';

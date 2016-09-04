@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Application.css';
 
-// React Components.
+// React components.
 import Header from '../Header';
 import Specification from '../Specification';
 import Comparison from '../Comparison';
