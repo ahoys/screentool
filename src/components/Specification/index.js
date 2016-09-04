@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 import './Specification.css';
 
 // React components.
-import SpecificationScreen from './SpecificationScreen';
-import Resolution from './Resolution';
-import ScreenSize from './ScreenSize';
+import Setting from './Setting';
+import AspectDisplayFrame from './AspectDisplayFrame';
 
 class Specification extends Component {
     render() {
         return (
             <div className="Specification">
-                <SpecificationScreen id={0} />
-                <SpecificationScreen id={1} />
-                <Resolution/>
-                <ScreenSize/>
+                <AspectDisplayFrame/>
+                <Setting/>
+                <Setting/>
             </div>
         );
     }

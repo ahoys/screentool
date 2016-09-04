@@ -1,0 +1,17 @@
+.Header {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 0px 0px 16px 0px;
+    line-height: 100%;
+}
+
+.Header h1 {
+    margin-left: 16px;
+    font-size: 1.6em;
+}
+
+.Header h2 {
+    margin-left: 16px;
+    font-size: 1em;
+}

@@ -1,4 +1,28 @@
-.App {
-    text-align: center;
+.Application .bg-top {
+    display: inline-block;
+    width: 100%;
     background-color: #e1e1e1;
+}
+
+.Application .bg-bottom {
+    display: inline-block;
+    width: 100%;
+}
+
+.Application .pageContent {
+    display: inline-block;
+    width: 100%;
+    max-width: 1024px;
+    margin-left: calc(50% - 528px);
+    padding: 0px 16px 0px 16px;
+    color: #404040;
+}
+
+.Application .pageFooter {
+    display: inline-block;
+    width: 100%;
+    max-width: 1024px;
+    margin-left: calc(50% - 528px);
+    padding: 0px 16px 0px 16px;
+    color: #e1e1e1;
 }

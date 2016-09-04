@@ -10,11 +10,19 @@ import Footer from '../Footer';
 class Application extends Component {
     render() {
         return (
-            <div className="App">
-                <Header/>
-                <Specification/>
-                <Comparison/>
-                <Footer/>
+            <div className="Application">
+                <div className="bg-top">
+                    <main className="pageContent">
+                        <Header/>
+                        <Specification/>
+                        <Comparison/>
+                    </main>
+                </div>
+                <div className="bg-bottom">
+                    <footer className="pageFooter">
+                        <Footer/>
+                    </footer>
+                </div>
             </div>
         );
     }
