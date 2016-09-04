@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Comparison extends Component {
     render() {
         return (
-            <div className="comparison">
-                <p>#comparison</p>
+            <div className="Comparison">
+                <p>#Comparison</p>
             </div>
         );
     }
