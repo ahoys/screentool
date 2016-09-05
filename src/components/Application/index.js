@@ -95,9 +95,9 @@ const Application = React.createClass({
                             s0={this.state.s0}
                             s1={this.state.s1}
                             handleInputX0={this.handleInputX0}
-                            handleINputY0={this.handleInputY0}
+                            handleInputY0={this.handleInputY0}
                             handleInputX1={this.handleInputX1}
-                            handleINputY1={this.handleInputY1}
+                            handleInputY1={this.handleInputY1}
                         />
                         <Comparison
                             x0={this.state.x0}

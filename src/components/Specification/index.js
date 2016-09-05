@@ -26,8 +26,8 @@ const Specification = React.createClass({
                 <Setting
                     x={this.props.x1}
                     y={this.props.y1}
-                    handleInputX={this.props.handleInputX0}
-                    handleInputY={this.props.handleInputY0}
+                    handleInputX={this.props.handleInputX1}
+                    handleInputY={this.props.handleInputY1}
                 />
             </div>
         );
