@@ -9,19 +9,17 @@ const Specification = React.createClass({
     
     render: function () {
 
-        const screens = {
-            0: this.props.screen0,
-            1: this.props.screen1
-        };
+        const screen0 = this.props.screens[0];
+        const screen1 = this.props.screens[1];
 
         return (
             <div className="Specification">
                 <AspectDisplayFrame
-                    res_x={screens[0].res_x}
-                    res_y={screens[1].res_y}
+                    res_x={screen0.res_x}
+                    res_y={screen1.res_y}
                 />
-                <Setting screen={screens[0]} />
-                <Setting screen={screens[1]} />
+                <Setting screen={screen0} />
+                <Setting screen={screen1} />
             </div>
         );
     }
