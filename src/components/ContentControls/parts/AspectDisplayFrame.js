@@ -44,7 +44,7 @@ const AspectDisplayFrame = React.createClass({
         });
 
         return (
-            <div className="AspectDisplayFrame">
+            <div className="AspectDisplayFrame noSelect">
                 {aspectsHTML}
             </div>
         );

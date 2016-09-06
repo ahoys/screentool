@@ -1,34 +1,34 @@
-.Specification {
+.ContentControls {
     display: inline-block;
     width: 50%;
     vertical-align: text-top;
     padding-bottom: 32px;
 }
 
-.Specification .setting {
+.ContentControls .setting {
     display: inline-block;
     width: 100%;
     padding: 0px 0px 16px 0px;
 }
 
-.Specification .inputs {
+.ContentControls .inputs {
     display: inline-block;
     margin: 0px 64px 0px 0px;
 }
 
-.Specification .inputs div {
+.ContentControls .inputs div {
     display: inline-block;
     margin-right: 4px;
 }
 
-.Specification .inputs p {
+.ContentControls .inputs p {
     display: inline-block;
     margin: 0px 4px 4px 0px;
     padding: 2px 4px 2px 4px;
     font-size: 0.6em;
 }
 
-.Specification .inputs input {
+.ContentControls .inputs input {
     display: block;
     width: 80px;
     height: 30px;

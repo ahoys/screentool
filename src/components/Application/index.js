@@ -3,8 +3,8 @@ import './Application.css';
 
 // React components.
 import Header from '../Header';
-import Specification from '../Specification';
-import Comparison from '../Comparison';
+import ContentControls from '../ContentControls';
+import ContentComparison from '../ContentComparison';
 import Footer from '../Footer';
 
 const Application = React.createClass({
@@ -128,10 +128,10 @@ const Application = React.createClass({
                 <div className="bg-top">
                     <main className="pageContent">
                         <Header />
-                        <Specification
+                        <ContentControls
                             screens={screens}
                         />
-                        <Comparison
+                        <ContentComparison
                             screens={screens}
                         />
                     </main>

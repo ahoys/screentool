@@ -1,10 +1,10 @@
 import React from 'react';
-import './Specification.css';
+import './ContentControls.css';
 
 // React components.
-import AspectDisplayFrame from './AspectDisplayFrame';
+import AspectDisplayFrame from './parts/AspectDisplayFrame';
 
-const Specification = React.createClass({
+const ContentControls = React.createClass({
     
     render: function () {
 
@@ -36,7 +36,7 @@ const Specification = React.createClass({
         });
 
         return (
-            <div className="Specification">
+            <div className="ContentControls">
                 <AspectDisplayFrame
                     screens={this.props.screens}
                 />
@@ -56,4 +56,4 @@ const Specification = React.createClass({
     }
 });
 
-export default Specification;
+export default ContentControls;
