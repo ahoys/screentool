@@ -4,7 +4,7 @@ import './Header.css';
 class Header extends Component {
     render() {
         return (
-            <div className="Header">
+            <div className="Header noSelect">
                 <h1>Screen Tool</h1>
                 <h2>Display Specifications</h2>
             </div>

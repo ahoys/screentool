@@ -10,13 +10,13 @@ const Specification = React.createClass({
 
         const resolutionHTML = this.props.screens.map((screen, i) => {
             return (
-                <div key={i}>
-                    <div className="setting">
-                        <p>X</p>
+                <div className="inputs" key={i}>
+                    <div>
+                        <p>SCREEN {i+1}: X</p>
                         <input type="number" defaultValue={screen.x} onChange={screen.handleX} max="16384" min="0" />
                     </div>
-                    <div className="setting">
-                        <p>Y</p>
+                    <div>
+                        <p>SCREEN {i+1}: Y</p>
                         <input type="number" defaultValue={screen.y} onChange={screen.handleY} max="16384" min="0" />
                     </div>
                 </div>
@@ -26,7 +26,7 @@ const Specification = React.createClass({
         const sizeHTML = this.props.screens.map((screen, i) => {
             return (
                 <div key={i}>
-                    <div className="setting">
+                    <div className="inputs">
                         <p>Inches</p>
                         <input type="number" defaultValue={screen.s} />
                         <input type="range" defaultValue={screen.s} onChange={screen.handleS} max="300" min="1" />
@@ -40,16 +40,17 @@ const Specification = React.createClass({
                 <AspectDisplayFrame
                     screens={this.props.screens}
                 />
-                <div>
+                <div className="divider" />
+                <div className="setting noSelect">
                     <h2>Resolution</h2>
                     <p>Horisontal and vertical resolution in pixels.</p>
+                    {resolutionHTML}
                 </div>
-                {resolutionHTML}
-                <div>
+                <div className="setting noSelect">
                     <h2>Screen Size</h2>
                     <p>Diagonal size of the screen in inches.</p>
+                    {sizeHTML}
                 </div>
-                {sizeHTML}
             </div>
         );
     }

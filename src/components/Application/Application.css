@@ -26,3 +26,9 @@
     padding: 0px 16px 0px 16px;
     color: #e1e1e1;
 }
+
+.Application .divider {
+    display: block;
+    padding: 16px 0px 0px 0px;
+    border-bottom: 1px dashed #ceced0;
+}
