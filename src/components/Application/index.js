@@ -80,6 +80,28 @@ const Application = React.createClass({
         }
     },
 
+    handleInputS0: function (event) {
+
+        const value = event.target.value;
+
+        if (value >= 0 && value <= 300) {
+            this.setState({
+                s0: event.target.value
+            });
+        }
+    },
+
+    handleInputS1: function (event) {
+
+        const value = event.target.value;
+
+        if (value >= 0 && value <= 300) {
+            this.setState({
+                s1: event.target.value
+            });
+        }
+    },
+
     render: function () {
 
         const screens = [
@@ -88,14 +110,16 @@ const Application = React.createClass({
                 y: this.state.y0,
                 s: this.state.s0,
                 handleX: this.handleInputX0,
-                handleY: this.handleInputY0
+                handleY: this.handleInputY0,
+                handleS: this.handleInputS0
             },
             {
                 x: this.state.x1,
                 y: this.state.y1,
                 s: this.state.s1,
                 handleX: this.handleInputX1,
-                handleY: this.handleInputY1
+                handleY: this.handleInputY1,
+                handleS: this.handleInputS1
             }
         ];
 
