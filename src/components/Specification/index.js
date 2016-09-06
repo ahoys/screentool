@@ -8,9 +8,9 @@ const Specification = React.createClass({
     
     render: function () {
 
-        const resolutionHTML = this.props.screens.map((screen) => {
+        const resolutionHTML = this.props.screens.map((screen, i) => {
             return (
-                <div>
+                <div key={i}>
                     <div className="setting">
                         <p>X</p>
                         <input type="number" defaultValue={screen.x} onChange={screen.handleX} max="16384" min="0" />
@@ -23,9 +23,9 @@ const Specification = React.createClass({
             );
         });
 
-        const sizeHTML = this.props.screens.map((screen) => {
+        const sizeHTML = this.props.screens.map((screen, i) => {
             return (
-                <div>
+                <div key={i}>
                     <div className="setting">
                         <p>Inches</p>
                         <input type="number" defaultValue={screen.s} />
