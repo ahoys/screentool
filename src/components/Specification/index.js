@@ -9,26 +9,24 @@ const Specification = React.createClass({
     
     render: function () {
 
+        const settingsHTML = this.props.screens.map((screen, i) => {
+            return (
+                <Setting
+                    x={screen.x}
+                    y={screen.y}
+                    handleX={screen.handleX}
+                    handleY={screen.handleY}
+                    key={i}
+                />
+            );
+        });
+
         return (
             <div className="Specification">
                 <AspectDisplayFrame
-                    x0={this.props.x0}
-                    y0={this.props.y0}
-                    x1={this.props.x1}
-                    y1={this.props.y1}
+                    screens={this.props.screens}
                 />
-                <Setting
-                    x={this.props.x0}
-                    y={this.props.y0}
-                    handleInputX={this.props.handleInputX0}
-                    handleInputY={this.props.handleInputY0}
-                />
-                <Setting
-                    x={this.props.x1}
-                    y={this.props.y1}
-                    handleInputX={this.props.handleInputX1}
-                    handleInputY={this.props.handleInputY1}
-                />
+                {settingsHTML}
             </div>
         );
     }

@@ -13,9 +13,9 @@ const Application = React.createClass({
         return {
             x0: this.props.screens[0].res_x,
             y0: this.props.screens[0].res_y,
+            s0: this.props.screens[0].size,
             x1: this.props.screens[1].res_x,
             y1: this.props.screens[1].res_y,
-            s0: this.props.screens[0].size,
             s1: this.props.screens[1].size
         }
     },
@@ -82,30 +82,33 @@ const Application = React.createClass({
 
     render: function () {
 
+        const screens = [
+            {
+                x: this.state.x0,
+                y: this.state.y0,
+                s: this.state.s0,
+                handleX: this.handleInputX0,
+                handleY: this.handleInputY0
+            },
+            {
+                x: this.state.x1,
+                y: this.state.y1,
+                s: this.state.s1,
+                handleX: this.handleInputX1,
+                handleY: this.handleInputY1
+            }
+        ];
+
         return (
             <div className="Application">
                 <div className="bg-top">
                     <main className="pageContent">
                         <Header />
                         <Specification
-                            x0={this.state.x0}
-                            y0={this.state.y0}
-                            x1={this.state.x1}
-                            y1={this.state.y1}
-                            s0={this.state.s0}
-                            s1={this.state.s1}
-                            handleInputX0={this.handleInputX0}
-                            handleInputY0={this.handleInputY0}
-                            handleInputX1={this.handleInputX1}
-                            handleInputY1={this.handleInputY1}
+                            screens={screens}
                         />
                         <Comparison
-                            x0={this.state.x0}
-                            y0={this.state.y0}
-                            x1={this.state.x1}
-                            y1={this.state.y1}
-                            s0={this.state.s0}
-                            s1={this.state.s1}
+                            screens={screens}
                         />
                     </main>
                 </div>
