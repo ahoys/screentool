@@ -3,20 +3,22 @@ import ReactDOM from 'react-dom';
 import Application from './components/Application/index';
 import './index.css';
 
-const defaultScreens = [
-    {
-        res_x: 1920,
-        res_y: 1080,
-        size: 27
+const defaultScreens = {
+    0: {
+        x: 1920,
+        y: 1080,
+        s: 27,
+        enabled: true
     },
-    {
-        res_x: 3840,
-        res_y: 2160,
-        size: 42
+    1: {
+        x: 3840,
+        y: 2160,
+        s: 42,
+        enabled: true
     }
-];
+};
 
 ReactDOM.render(
-    <Application screens={defaultScreens} />,
+    <Application defaultScreens={defaultScreens} />,
     document.getElementById('root')
 );

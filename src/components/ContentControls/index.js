@@ -8,32 +8,86 @@ const ContentControls = React.createClass({
     
     render: function () {
 
-        const resolutionHTML = this.props.screens.map((screen, i) => {
+        const handleChange = this.props.handleChange;
+        const handleNew = this.props.handleNew;
+        const handleToggle = this.props.handleToggle;
+
+        const resolutionHTML = Object.keys(this.props.screens).map((key) => {
+            const screen = this.props.screens[key];
+            const style = screen.enabled ? "screenOptions" : "screenOptions disabled" ;
             return (
-                <div className="screenOptions" key={i}>
-                    <h2 className="screenId">{i+1}</h2>
+                <div className={style} key={key}>
+                    <h2 className="screenId">{Number(key) + 1}</h2>
                     <div className="inputBlock">
                         <div><p>X</p></div>
-                        <input type="number" defaultValue={screen.x} onChange={screen.handleX} max="16384" min="0" />
+                        <input
+                            id={'x' + key}
+                            type="number"
+                            defaultValue={screen.x}
+                            onChange={handleChange}
+                            min="1"
+                            max="16384"
+                        />
                     </div>
                     <div className="inputBlock">
                         <div><p>Y</p></div>
-                        <input type="number" defaultValue={screen.y} onChange={screen.handleY} max="16384" min="0" />
+                        <input
+                            id={'y' + key}
+                            type="number"
+                            defaultValue={screen.y}
+                            onChange={handleChange}
+                            min="1"
+                            max="16384"
+                        />
                     </div>
+                    <button
+                        id={key}
+                        className="toggleScreen"
+                        onClick={handleToggle}
+                    >
+                        Toggle
+                    </button>
                 </div>
             );
         });
 
-        const sizeHTML = this.props.screens.map((screen, i) => {
+        const addHTML = (
+            <button
+                className="addScreen"
+                onClick={handleNew}
+            >
+                + Add Screen
+            </button>
+        );
+
+        const sizeHTML = Object.keys(this.props.screens).map((key) => {
+            const screen = this.props.screens[key];
+            const style = screen.enabled ? "screenOptions" : "screenOptions disabled" ;
             return (
-                <div className="screenOptions" key={i}>
-                    <h2 className="screenId">{i+1}</h2>
+                <div className={style} key={key}>
+                    <h2 className="screenId">{Number(key) + 1}</h2>
                     <div className="inputBlock">
                         <div><p>Inches</p></div>
-                        <input type="number" value={screen.s} onChange={screen.handleS} max="300" min="1" />
+                        <input
+                            id={'s' + key}
+                            type="number"
+                            value={screen.s}
+                            onChange={handleChange}
+                            min="1"
+                            max="300"
+                        />
                     </div>
                     <div className="inputBlock">
-                        <input className="range" type="range" value={screen.s} onInput={screen.handleS} onChange={screen.handleS} min="5" max="75" />
+                        <input
+                            id={'s' + key}
+                            type="range"
+                            className="range"
+                            value={screen.s}
+                            onInput={handleChange}
+                            onChange={handleChange}
+                            min="5"
+                            max="75"
+                        />
                     </div>
                 </div>
             );
@@ -49,6 +103,7 @@ const ContentControls = React.createClass({
                     <h2>Resolution</h2>
                     <p>Horizontal and vertical resolution in pixels.</p>
                     {resolutionHTML}
+                    {addHTML}
                 </div>
                 <div className="settingArea noSelect">
                     <h2>Screen Size</h2>

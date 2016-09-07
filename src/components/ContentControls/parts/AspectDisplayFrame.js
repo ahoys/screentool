@@ -19,8 +19,9 @@ const AspectDisplayFrame = React.createClass({
 
     render: function () {
 
-        const aspectsHTML = this.props.screens.map((screen, i) => {
+        const aspectsHTML = Object.keys(this.props.screens).map((key) => {
 
+            const screen = this.props.screens[key];
             const ratio = this.getAspectRatio(screen.x, screen.y);
             const ratio_x = screen.x/ratio;
             const ratio_y = screen.y/ratio;
@@ -36,11 +37,13 @@ const AspectDisplayFrame = React.createClass({
                 w = (h * screen.x) / screen.y;
             }
 
-            return (
-                <div className="aspectScreen" style={{width: w + 'px', height: h + 'px'}} key={i}>
-                    <p>{ratio_x}:{ratio_y}</p>
-                </div>
-            );
+            if (screen.enabled) {
+                return (
+                    <div className="aspectScreen" style={{width: w + 'px', height: h + 'px'}} key={key}>
+                        <p>{ratio_x}:{ratio_y}</p>
+                    </div>
+                );
+            }
         });
 
         return (

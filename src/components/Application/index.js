@@ -10,118 +10,56 @@ import Footer from '../Footer';
 const Application = React.createClass({
 
     getInitialState: function () {
-        return {
-            x0: this.props.screens[0].res_x,
-            y0: this.props.screens[0].res_y,
-            s0: this.props.screens[0].size,
-            x1: this.props.screens[1].res_x,
-            y1: this.props.screens[1].res_y,
-            s1: this.props.screens[1].size
-        }
+
+        return this.props.defaultScreens;
     },
 
     /**
-     * Handles horizontal resolution input.
+     * Handles all kind of input changes.
      * @param event
      */
-    handleInputX0: function (event) {
+    handleChange: function (event) {
 
-        const value = event.target.value;
+        const tar = event.target.id.charAt(0);
+        const key = Number(event.target.id.substr(1, 9999));
+        const obj = this.state[key];
+        obj[tar] = Number(event.target.value);
+        const returnObj = {};
+        returnObj[key] = obj;
 
-        if (value >= 0 && value <= 16384) {
-            this.setState({
-                x0: event.target.value
-            });
+        this.setState(returnObj);
+    },
+
+    handleNew: function () {
+
+        const key = Object.keys(this.state).length;
+
+        if (key < 9) {
+
+            const returnObj = {};
+            returnObj[key] = {
+                x: 1920,
+                y: 1080,
+                s: 27,
+                enabled: true
+            };
+
+            this.setState(returnObj);
         }
     },
 
-    /**
-     * Handles vertical resolution input.
-     * @param event
-     */
-    handleInputY0: function (event) {
+    handleToggle: function (event) {
 
-        const value = event.target.value;
+        const key = Number(event.target.id);
+        const obj = this.state[key];
+        obj['enabled'] = !obj.enabled;
+        const returnObj = {};
+        returnObj[key] = obj;
 
-        if (value >= 0 && value <= 16384) {
-            this.setState({
-                y0: event.target.value
-            });
-        }
-    },
-
-    /**
-     * Handles horizontal resolution input.
-     * @param event
-     */
-    handleInputX1: function (event) {
-
-        const value = event.target.value;
-
-        if (value >= 0 && value <= 16384) {
-            this.setState({
-                x1: event.target.value
-            });
-        }
-    },
-
-    /**
-     * Handles vertical resolution input.
-     * @param event
-     */
-    handleInputY1: function (event) {
-
-        const value = event.target.value;
-
-        if (value >= 0 && value <= 16384) {
-            this.setState({
-                y1: event.target.value
-            });
-        }
-    },
-
-    handleInputS0: function (event) {
-
-        const value = event.target.value;
-
-        if (value >= 0 && value <= 300) {
-            this.setState({
-                s0: event.target.value
-            });
-        }
-    },
-
-    handleInputS1: function (event) {
-
-        const value = event.target.value;
-
-        if (value >= 0 && value <= 300) {
-            this.setState({
-                s1: event.target.value
-            });
-        }
+        this.setState(returnObj);
     },
 
     render: function () {
-
-        const screens = [
-            {
-                x: this.state.x0,
-                y: this.state.y0,
-                s: this.state.s0,
-                handleX: this.handleInputX0,
-                handleY: this.handleInputY0,
-                handleS: this.handleInputS0
-            },
-            {
-                x: this.state.x1,
-                y: this.state.y1,
-                s: this.state.s1,
-                handleX: this.handleInputX1,
-                handleY: this.handleInputY1,
-                handleS: this.handleInputS1
-            }
-        ];
 
         return (
             <div className="Application">
@@ -129,10 +67,13 @@ const Application = React.createClass({
                     <main className="pageContent">
                         <Header />
                         <ContentControls
-                            screens={screens}
+                            screens={this.state}
+                            handleChange={this.handleChange}
+                            handleNew={this.handleNew}
+                            handleToggle={this.handleToggle}
                         />
                         <ContentComparison
-                            screens={screens}
+                            screens={this.state}
                         />
                     </main>
                 </div>
