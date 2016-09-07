@@ -8,15 +8,6 @@ const ContentControls = React.createClass({
     
     render: function () {
 
-        const rangeList =
-            (
-                <datalist>
-                    <option>10</option>
-                    <option>20</option>
-                    <option>30</option>
-                </datalist>
-            );
-
         const resolutionHTML = this.props.screens.map((screen, i) => {
             return (
                 <div className="screenOptions" key={i}>
@@ -42,7 +33,7 @@ const ContentControls = React.createClass({
                         <input type="number" value={screen.s} onChange={screen.handleS} max="300" min="1" />
                     </div>
                     <div className="inputBlock">
-                        <input className="range" type="range" value={screen.s} list={rangeList} onInput={screen.handleS} onChange={screen.handleS} max="300" min="1" />
+                        <input className="range" type="range" value={screen.s} onInput={screen.handleS} onChange={screen.handleS} min="5" max="75" />
                     </div>
                 </div>
             );
