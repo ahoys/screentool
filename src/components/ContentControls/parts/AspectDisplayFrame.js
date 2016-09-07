@@ -44,6 +44,9 @@ const AspectDisplayFrame = React.createClass({
                     </div>
                 );
             }
+            else {
+                return undefined;
+            }
         });
 
         return (
