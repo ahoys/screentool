@@ -40,7 +40,7 @@ const ContentControls = React.createClass({
                 <AspectDisplayFrame
                     screens={this.props.screens}
                 />
-                <div className="divider" />
+                <div className="divider"></div>
                 <div className="setting noSelect">
                     <h2>Resolution</h2>
                     <p>Horisontal and vertical resolution in pixels.</p>
