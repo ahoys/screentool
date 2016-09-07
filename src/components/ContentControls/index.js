@@ -10,13 +10,14 @@ const ContentControls = React.createClass({
 
         const resolutionHTML = this.props.screens.map((screen, i) => {
             return (
-                <div className="inputs" key={i}>
-                    <div>
-                        <p>SCREEN {i+1}: X</p>
+                <div className="screenOptions" key={i}>
+                    <h2 className="screenId">{i+1}</h2>
+                    <div className="inputBlock">
+                        <div><p>X</p></div>
                         <input type="number" defaultValue={screen.x} onChange={screen.handleX} max="16384" min="0" />
                     </div>
-                    <div>
-                        <p>SCREEN {i+1}: Y</p>
+                    <div className="inputBlock">
+                        <div><p>Y</p></div>
                         <input type="number" defaultValue={screen.y} onChange={screen.handleY} max="16384" min="0" />
                     </div>
                 </div>
@@ -25,11 +26,14 @@ const ContentControls = React.createClass({
 
         const sizeHTML = this.props.screens.map((screen, i) => {
             return (
-                <div key={i}>
-                    <div className="inputs">
-                        <p>Inches</p>
-                        <input type="number" defaultValue={screen.s} />
-                        <input type="range" defaultValue={screen.s} onChange={screen.handleS} max="300" min="1" />
+                <div className="screenOptions" key={i}>
+                    <h2 className="screenId">{i+1}</h2>
+                    <div className="inputBlock">
+                        <div><p>Inches</p></div>
+                        <input type="number" defaultValue={screen.s} onChange={screen.handleS} max="300" min="1" />
+                    </div>
+                    <div className="inputBlock">
+                        <input className="range" type="range" defaultValue={screen.s} onInput={screen.handleS} onChange={screen.handleS} max="300" min="1" />
                     </div>
                 </div>
             );
@@ -41,12 +45,12 @@ const ContentControls = React.createClass({
                     screens={this.props.screens}
                 />
                 <div className="divider"></div>
-                <div className="setting noSelect">
+                <div className="settingArea noSelect">
                     <h2>Resolution</h2>
-                    <p>Horisontal and vertical resolution in pixels.</p>
+                    <p>Horizontal and vertical resolution in pixels.</p>
                     {resolutionHTML}
                 </div>
-                <div className="setting noSelect">
+                <div className="settingArea noSelect">
                     <h2>Screen Size</h2>
                     <p>Diagonal size of the screen in inches.</p>
                     {sizeHTML}

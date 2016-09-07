@@ -5,34 +5,64 @@
     padding-bottom: 32px;
 }
 
-.ContentControls .setting {
-    display: inline-block;
-    width: 100%;
+.ContentControls .settingArea {
+    display: block;
+}
+
+.ContentControls .settingArea .screenOptions {
+    display: block;
     padding: 0px 0px 16px 0px;
 }
 
-.ContentControls .inputs {
+.ContentControls .settingArea .screenOptions .screenId {
     display: inline-block;
-    margin: 0px 64px 0px 0px;
+    margin: 0px 16px 0px 8px;
+    font-size: 1.2em;
 }
 
-.ContentControls .inputs div {
+.ContentControls .settingArea .screenOptions .inputBlock {
     display: inline-block;
-    margin-right: 4px;
-}
-
-.ContentControls .inputs p {
-    display: inline-block;
-    margin: 0px 4px 4px 0px;
-    padding: 2px 4px 2px 4px;
+    margin: 0px 4px 0px 0px;
     font-size: 0.6em;
+    vertical-align: middle;
 }
 
-.ContentControls .inputs input {
-    display: block;
+.ContentControls .settingArea .screenOptions .inputBlock div {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 16px;
+    height: 30px;
+    padding: 0px 0px 0px 12px;
+    text-align: center;
+    background-color: #d4d4d4;
+}
+
+.ContentControls .settingArea .screenOptions .inputBlock p {
+    margin: 8px 0px 0px 0px;
+}
+
+.ContentControls .settingArea .screenOptions .inputBlock input {
+    display: inline-block;
+    vertical-align: top;
     width: 80px;
     height: 30px;
+    padding: 0;
+    margin: 0;
     text-align: center;
     border: 0;
+    outline: none;
     background-color: #d4d4d4;
+}
+
+.ContentControls .settingArea .screenOptions .inputBlock .range {
+    height: 8px;
+    margin: 4px 0px 0px 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    background-color: #404040;
 }
