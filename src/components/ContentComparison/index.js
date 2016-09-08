@@ -14,8 +14,8 @@ const ContentComparison = React.createClass({
                 <div className="settingArea">
                     <h2>Comparison</h2>
                     <p>Compare screen specifications.</p>
+                    <Table screens={this.props.screens} highlights={highlights}/>
                 </div>
-                <Table screens={this.props.screens} highlights={highlights}/>
             </div>
         );
     }

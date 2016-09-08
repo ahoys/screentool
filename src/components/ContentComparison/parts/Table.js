@@ -11,7 +11,7 @@ const Table = React.createClass({
         const headerHTML = (
             <thead>
                 <tr>
-                    <td className="tableHeader">Comparison</td>
+                    <th className="tableHeader">Comparison</th>
                     {Object.keys(screens).map(function (key) {
                         return (
                             <th key={key}>Screen {Number(key) + 1}</th>
@@ -23,7 +23,7 @@ const Table = React.createClass({
 
         const aspectRatioHTML = (
             <tr>
-                <td className="tableDescription">Aspect Ratio</td>
+                <th className="tableDescription">Aspect Ratio</th>
                 {Object.keys(screens).map(function (key) {
                     const screen = screens[key];
                     const styling = highlights['aspectRatio'] === key ? 'cell win' : 'cell' ;
@@ -36,10 +36,10 @@ const Table = React.createClass({
 
         const screenSizeHTML = (
             <tr>
-                <td className="tableDescription">Screen Size</td>
+                <th className="tableDescription">Screen Size</th>
                 {Object.keys(screens).map(function (key) {
                     const screen = screens[key];
-                    const styling = highlights['aspectRatio'] === key ? 'cell win' : 'cell' ;
+                    const styling = highlights['screenSize'] === key ? 'cell win' : 'cell' ;
                     return (
                         <th className={styling} key={key}>{screen.s}"</th>
                     );
@@ -49,10 +49,10 @@ const Table = React.createClass({
 
         const dimensionsHTML = (
             <tr>
-                <td className="tableDescription">Dimensions</td>
+                <th className="tableDescription">Dimensions</th>
                 {Object.keys(screens).map(function (key) {
                     const screen = screens[key];
-                    const styling = highlights['aspectRatio'] === key ? 'cell win' : 'cell' ;
+                    const styling = highlights['dimensions'] === key ? 'cell win' : 'cell' ;
                     return (
                         <th className={styling} key={key}>{screen.w} x {screen.h}</th>
                     );
@@ -62,10 +62,10 @@ const Table = React.createClass({
 
         const resolutionHTML = (
             <tr>
-                <td className="tableDescription">Resolution</td>
+                <th className="tableDescription">Resolution</th>
                 {Object.keys(screens).map(function (key) {
                     const screen = screens[key];
-                    const styling = highlights['aspectRatio'] === key ? 'cell win' : 'cell' ;
+                    const styling = highlights['resolution'] === key ? 'cell win' : 'cell' ;
                     return (
                         <th className={styling} key={key}>{screen.x} x {screen.y}</th>
                     );
@@ -75,10 +75,10 @@ const Table = React.createClass({
 
         const pixelDensityHTML = (
             <tr>
-                <td className="tableDescription">Pixel Density</td>
+                <th className="tableDescription">Pixel Density</th>
                 {Object.keys(screens).map(function (key) {
                     const screen = screens[key];
-                    const styling = highlights['aspectRatio'] === key ? 'cell win' : 'cell' ;
+                    const styling = highlights['pixelDensity'] === key ? 'cell win' : 'cell' ;
                     return (
                         <th className={styling} key={key}>{screen.pixelDensity} PPI</th>
                     );
@@ -88,10 +88,10 @@ const Table = React.createClass({
 
         const viewingDistanceHTML = (
             <tr>
-                <td className="tableDescription">Viewing Distance</td>
+                <th className="tableDescription">Viewing Distance</th>
                 {Object.keys(screens).map(function (key) {
                     const screen = screens[key];
-                    const styling = highlights['aspectRatio'] === key ? 'cell win' : 'cell' ;
+                    const styling = highlights['viewingDistance'] === key ? 'cell win' : 'cell' ;
                     return (
                         <th className={styling} key={key}>{screen.viewingDistance} cm</th>
                     );

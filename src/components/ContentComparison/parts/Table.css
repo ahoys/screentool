@@ -1,0 +1,19 @@
+.Table {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.Table th {
+    font-size: 0.8em;
+    padding: 0px 16px 0px 16px;
+}
+
+.Table .tableHeader {
+    padding: 16px;
+}
+
+.Table .tableDescription {
+    text-align: left;
+    padding: 8px 48px 8px 8px;
+    background-color: #d4d4d4;
+}
