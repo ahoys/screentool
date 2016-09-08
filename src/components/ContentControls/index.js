@@ -1,9 +1,6 @@
 import React from 'react';
 import './ContentControls.css';
 
-// React components.
-import AspectDisplayFrame from './parts/AspectDisplayFrame';
-
 const ContentControls = React.createClass({
     
     render: function () {
@@ -95,10 +92,6 @@ const ContentControls = React.createClass({
 
         return (
             <div className="ContentControls">
-                <AspectDisplayFrame
-                    screens={this.props.screens}
-                />
-                <div className="divider"></div>
                 <div className="settingArea noSelect">
                     <h2>Resolution</h2>
                     <p>Horizontal and vertical resolution in pixels.</p>

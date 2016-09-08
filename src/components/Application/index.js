@@ -3,6 +3,7 @@ import './Application.css';
 
 // React components.
 import Header from '../Header';
+import Preview from '../Preview';
 import ContentControls from '../ContentControls';
 import ContentComparison from '../ContentComparison';
 import Footer from '../Footer';
@@ -34,7 +35,7 @@ const Application = React.createClass({
 
         const key = Object.keys(this.state).length;
 
-        if (key < 9) {
+        if (key < 5) {
 
             const returnObj = {};
             returnObj[key] = {
@@ -65,7 +66,11 @@ const Application = React.createClass({
             <div className="Application">
                 <div className="bg-top">
                     <main className="pageContent">
-                        <Header />
+                        <Header/>
+                        <Preview
+                            screens={this.state}
+                        />
+                        <div className="divider"></div>
                         <ContentControls
                             screens={this.state}
                             handleChange={this.handleChange}
