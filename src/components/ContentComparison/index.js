@@ -7,13 +7,15 @@ const ContentComparison = React.createClass({
 
     render: function () {
 
+        const highlights = {};
+
         return (
             <div className="ContentComparison">
                 <div className="settingArea">
                     <h2>Comparison</h2>
                     <p>Compare screen specifications.</p>
                 </div>
-                <Table screens={this.props.screens}/>
+                <Table screens={this.props.screens} highlights={highlights}/>
             </div>
         );
     }

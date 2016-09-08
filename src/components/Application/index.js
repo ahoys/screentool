@@ -35,7 +35,7 @@ const Application = React.createClass({
 
         const key = Object.keys(this.state).length;
 
-        if (key < 5) {
+        if (key < 4) {
 
             const returnObj = {};
             returnObj[key] = {
