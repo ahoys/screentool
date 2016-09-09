@@ -10,21 +10,9 @@
 }
 
 .Application .pageContent {
-    display: inline-block;
-    width: 100%;
-    max-width: 1024px;
-    margin-left: calc(50% - 528px);
+    width: 992px;
+    margin: 0 auto;
     padding: 0px 16px 0px 16px;
-    color: #404040;
-}
-
-.Application .pageFooter {
-    display: inline-block;
-    width: 100%;
-    max-width: 1024px;
-    margin-left: calc(50% - 528px);
-    padding: 0px 16px 0px 16px;
-    color: #e1e1e1;
 }
 
 .Application .divider {

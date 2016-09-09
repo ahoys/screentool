@@ -1,3 +1,12 @@
+.Footer {
+    display: inline-block;
+    width: 100%;
+    max-width: 1024px;
+    margin-left: calc(50% - 528px);
+    padding: 0px 16px 0px 16px;
+    color: #e1e1e1;
+}
+
 .Footer .footerContent {
     display: inline-block;
     vertical-align: top;
