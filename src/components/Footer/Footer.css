@@ -1,8 +1,6 @@
 .Footer {
-    display: inline-block;
-    width: 100%;
-    max-width: 1024px;
-    margin-left: calc(50% - 528px);
+    width: 928px;
+    margin: 0 auto;
     padding: 0px 16px 0px 16px;
     color: #e1e1e1;
 }

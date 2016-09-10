@@ -1,18 +1,22 @@
+.Application {
+    overflow: hidden;
+}
+
 .Application .bg-top {
-    display: inline-block;
-    width: 100%;
+    display: block;
     background-color: #e1e1e1;
 }
 
 .Application .bg-bottom {
-    display: inline-block;
+    display: block;
     width: 100%;
 }
 
 .Application .pageContent {
-    width: 992px;
+    width: 928px;
     margin: 0 auto;
     padding: 0px 16px 0px 16px;
+    overflow: hidden;
 }
 
 .Application .divider {
