@@ -3,6 +3,7 @@ import './Application.css';
 
 // React components.
 import Header from '../Header';
+import Content from '../Content';
 import Preview from '../Preview';
 import ContentControls from '../ContentControls';
 import ContentComparison from '../ContentComparison';

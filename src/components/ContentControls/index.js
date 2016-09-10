@@ -12,9 +12,16 @@ const ContentControls = React.createClass({
         const resolutionHTML = Object.keys(this.props.screens).map((key) => {
             const screen = this.props.screens[key];
             const style = screen.enabled ? "screenOptions" : "screenOptions disabled" ;
+            const toggle = screen.enabled ? "Disable" : "Enable" ;
             return (
                 <div className={style} key={key}>
-                    <h2 className="screenId">{Number(key) + 1}</h2>
+                    <h2
+                        id={key}
+                        className="screenId"
+                        onClick={handleToggle}
+                    >
+                        {Number(key) + 1}
+                    </h2>
                     <div className="inputBlock">
                         <div><p>X</p></div>
                         <input
@@ -42,15 +49,17 @@ const ContentControls = React.createClass({
                         className="toggleScreen"
                         onClick={handleToggle}
                     >
-                        Toggle
+                        {toggle}
                     </button>
                 </div>
             );
         });
 
+        console.log(Object.keys(this.props.screens).length);
+        const style = Object.keys(this.props.screens).length < 4 ? "addScreen" : "addScreen hide" ;
         const addHTML = (
             <button
-                className="addScreen"
+                className={style}
                 onClick={handleNew}
             >
                 + Add Screen
