@@ -64,7 +64,7 @@ const Application = React.createClass({
 
         return (
             <div className="Application">
-                <div className="bg-top">
+                <div className="wrapper-top">
                     <main className="pageContent">
                         <Header/>
                         <Preview
@@ -82,7 +82,7 @@ const Application = React.createClass({
                         />
                     </main>
                 </div>
-                <div className="bg-bottom">
+                <div className="wrapper-bottom">
                     <footer className="pageFooter">
                         <Footer />
                     </footer>
