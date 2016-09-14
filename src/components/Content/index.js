@@ -1,4 +1,9 @@
 import React from 'react';
+import './Content.css';
+
+import Input from './parts/Input';
+import Preview from './parts/Preview';
+import Table from './parts/Table';
 
 const Content = React.createClass({
     
@@ -46,10 +51,29 @@ const Content = React.createClass({
     render: function () {
 
         const screens = this.props.screens;
-        
+
+        const resolutionInputHTML = Object.keys(screens).map(function (key) {
+            const screen = screens[key];
+        });
+
+        const sizeInputHTML = Object.keys(screens).map(function (key) {
+            const screen = screens[key];
+        });
+
         return (
             <main className="Content">
-                
+                <Preview screen={screens}/>
+                <div>
+                    <h2>Resolution</h2>
+                    <p>text</p>
+                    {resolutionInputHTML}
+                    <h2>Size</h2>
+                    <p>text</p>
+                    {sizeInputHTML}
+                </div>
+                <div>
+                    <Table screen={screens}/>
+                </div>
             </main>
         );
     }
